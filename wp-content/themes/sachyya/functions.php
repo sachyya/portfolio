@@ -151,64 +151,7 @@ function sachyya_fonts_url() {
 	return esc_url_raw( $fonts_url );
 }
 
-/**
- * Enqueue scripts and styles.
- */
-function sachyya_scripts() {
-	/**
-	 * Enqueue style
-	 */
-	wp_enqueue_style( 'sachyya-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
-
-	wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css' );
-
-	wp_enqueue_style( 'owl-theme', get_template_directory_uri() . '/css/owl.theme.css' );
-
-	wp_enqueue_style( 'magnific-popup', get_template_directory_uri() . '/css/magnific-popup.css' );
-
-	wp_enqueue_style( 'custom', get_template_directory_uri() . '/css/custom.css' );
-
-	wp_enqueue_style( 'sachyya-fonts', sachyya_fonts_url() );
-
-	wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css' );
-
-
-	/**
-	 * Enqueue scripts
-	 */
-	wp_enqueue_script( 'jquery' );
-
-	wp_enqueue_script( 'jquery-appear', get_template_directory_uri() . '/js/jquery.appear.js', array(), '', true );
-
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '', true );
-
-	wp_enqueue_script( 'classie', get_template_directory_uri() . '/js/classie.js', array(), '', true );
-
-	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array(), '', true );
-
-	wp_enqueue_script( 'magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', array(), '', true );
-
-	wp_enqueue_script( 'masonry-pkgd', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array(), '', true );
-
-	wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/masonry.js', array(), '', true );
-
-	wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.min.js', array(), '', true );
-
-	wp_enqueue_script( 'typed', get_template_directory_uri() . '/js/typed.js', array(), '', true );
-
-	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array(), '', true );
-
-	wp_enqueue_script( 'sachyya-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'sachyya-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'sachyya_scripts' );
 
 /**
  * Implement the Custom Header feature.
